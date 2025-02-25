@@ -1,10 +1,17 @@
 const express = require('express');
+const dotenv = require('dotenv');
+
+
+const routes = require('./routes')
+
+dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 4040
 
 
-app.get('/',(req,res)=>res.send("HEY THERE."))
+app.use('/api',routes);
 
-app.listen(4040,()=>{
-    console.log("SERVER RUNNING FINE");
+app.listen(port,()=>{
+    console.log(`SERVER RUNNING FINE on port ${port}`);
 })
