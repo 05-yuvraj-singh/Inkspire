@@ -2,8 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
-router.use('/user/test',(req,res)=>{
-    res.send("TEST REQUEST REACHED CONTROLLER.")
-})
+const bookRouter = require("./bookRoutes");
+const userRouter = require("./userRoutes");
+
+router.use("/book",bookRouter)
+router.use("/user",userRouter)
 
 module.exports = router
