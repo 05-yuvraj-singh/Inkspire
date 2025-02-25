@@ -1,0 +1,16 @@
+{
+  "name": "inkspire",
+  "version": "1.0.0",
+  "description": "Inkspire – A distributed digital library platform engineered with a microservices architecture and event-driven design for high concurrency and fault tolerance. Featuring robust RESTful APIs, secure JWT-based authentication, and real-time data synchronization for efficient book management and tracking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
