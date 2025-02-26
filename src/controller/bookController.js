@@ -1,6 +1,27 @@
-function createController(req,res){
-    console.log(req.body);
-    res.send("BOOK CREATE CONROLLER REACHED.");
+const {bookService} = require('../services');
+
+async function createController(req,res){
+    try{
+      const data = await bookService.createBook(req.body);
+      console.log("data is ",data);
+      res.json({
+        success:true,
+        message: "Book Created successfully",
+        data,
+        err:null
+      })
+    }
+    catch(err){
+        console.log(err);
+        res.json({
+            success: false,
+            message : "Something went wrong",
+            data:null,
+            err
+        }
+        )
+    }
+    
 }
 
 function updateController(req,res){

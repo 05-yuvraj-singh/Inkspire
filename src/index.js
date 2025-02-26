@@ -13,6 +13,7 @@ const port = process.env.PORT || 4040
 
 connectDB();
 
+app.use(express.json());
 app.use('/api',routes);
 
 app.listen(port,()=>{
